@@ -1,73 +1,23 @@
 ﻿using FoodMart.POS.Shared;
-
-bool process = true;
-POSService service;
-
-Console.WriteLine("FoodMart Ltd. POS");
-Console.WriteLine("v0.1.0");
-Console.WriteLine("-------------------------------------------------");
-
-
-while (process)
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+namespace FoodMart.POS
 {
-
-    Console.WriteLine(" Welcome cashier. See your options below:");
-    Console.WriteLine(" Enter 0 to exit the pos system");
-    Console.WriteLine(" Enter 1 to begin processing a sale");
-    var input = Console.ReadLine();
-
-    switch (input)
+    public static class Program
     {
-        case "0":
-            process = false;
-            break;
-        case "1":
-            StartTransaction();
-            break;
-        default:
-            break;
-    }
-}
-
-void StartTransaction()
-{
-    service = new POSService();
-    Console.WriteLine("---------------------Inventory-------------------");
-    Console.WriteLine(InventoryAccess.GetInventory());
-    Console.WriteLine("---------------------Inventory-------------------");
-
-    bool isTransacting = true;
-    while (isTransacting)
-    {
-        Console.WriteLine("Please input the name of the item or type end to finish the transaction");
-        Console.WriteLine("-------------------------------------------------\r\n");
-
-        var input = Console.ReadLine();
-        Console.WriteLine("---------------------\r\n");
-        if (string.Equals(input, "end", StringComparison.OrdinalIgnoreCase))
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Please input the customers total payment");
-            var payment = Console.ReadLine();
-            var isValidInput = TryParseInput(payment, out var result);
-            if (isValidInput)
-            {
-                isTransacting = false;
-                Thread.Sleep(1000);
-                Console.WriteLine(service.ProcessPayment(result));
-            }
-        }
-        else
-        {
-            _ = service.ScanItem(input, out string? currentBasket);
-            Console.WriteLine(currentBasket);
-        }
-        Console.WriteLine("---------------------\r\n");
-    }
-}
+            HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
-bool TryParseInput(string input, out decimal parseResult)
-{
-    bool success = decimal.TryParse(input, out var result);
-    parseResult = result;
-    return success;
+            builder.Logging.AddConsole();
+
+            builder.Services.AddScoped<IMainService, MainService>();
+            builder.Services.AddHostedService<HostedService>();
+
+
+            var app = builder.Build();
+            app.RunAsync().Wait();
+        }
+    }
 }

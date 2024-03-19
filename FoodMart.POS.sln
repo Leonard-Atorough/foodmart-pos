@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodMart.POS", "FoodMart.POS\FoodMart.POS.csproj", "{9F467CF9-44E5-4D55-82C6-6E30795E51C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodMart.POS", "FoodMart.POS\FoodMart.POS.csproj", "{9F467CF9-44E5-4D55-82C6-6E30795E51C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodMart.POS.Shared", "FoodMart.POS.Shared\FoodMart.POS.Shared.csproj", "{83888FA5-18BC-4CC1-9CE3-234E3878AEE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodMart.POS.Shared", "FoodMart.POS.Shared\FoodMart.POS.Shared.csproj", "{83888FA5-18BC-4CC1-9CE3-234E3878AEE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodMart.POS.UnitTests", "FoodMart.POS.UnitTests\FoodMart.POS.UnitTests.csproj", "{D6D7EE86-23F8-41AE-90FC-E59746F8C63F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodMart.POS.UnitTests", "FoodMart.POS.UnitTests\FoodMart.POS.UnitTests.csproj", "{D6D7EE86-23F8-41AE-90FC-E59746F8C63F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4AF4360A-CBE7-4D8F-8A52-B8172C76F019}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodMart.POS.Infrastructure", "FoodMart.POS.Infrastructure\FoodMart.POS.Infrastructure.csproj", "{C3019B80-EF6C-4A2E-A8F8-98B729D86AAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{D6D7EE86-23F8-41AE-90FC-E59746F8C63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6D7EE86-23F8-41AE-90FC-E59746F8C63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6D7EE86-23F8-41AE-90FC-E59746F8C63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3019B80-EF6C-4A2E-A8F8-98B729D86AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3019B80-EF6C-4A2E-A8F8-98B729D86AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3019B80-EF6C-4A2E-A8F8-98B729D86AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3019B80-EF6C-4A2E-A8F8-98B729D86AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6D7EE86-23F8-41AE-90FC-E59746F8C63F} = {4AF4360A-CBE7-4D8F-8A52-B8172C76F019}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B2E0E86-F55D-4A6B-9F54-9719707E916B}
