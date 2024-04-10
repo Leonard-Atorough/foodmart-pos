@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+	<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodMart.POS.Infrastructure\FoodMart.POS.Infrastructure.csproj" />
     <ProjectReference Include="..\FoodMart.POS.Shared\FoodMart.POS.Shared.csproj" />
   </ItemGroup>
 

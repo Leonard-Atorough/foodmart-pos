@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FoodMart.POS.Models
+﻿namespace FoodMart.POS.Models.Customer
 {
     public class CreateCustomerRequest
     {
